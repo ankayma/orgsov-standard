@@ -49,7 +49,7 @@ It is not a management-system standard. ISO/IEC 42001 defines how an organizatio
 |---|---|
 | ISO/IEC 42001:2023 | Clause 8 (operation) and Annex A: AI system life cycle (A.6), use of AI systems (A.9), third-party relationships (A.10). Evidence records in Part D feed the Statement of Applicability. |
 | ISO/IEC 27001:2022 Annex A | Access control (A.5.15, A.5.18), privileged access (A.8.2), logging (A.8.15), monitoring (A.8.16). Part A is a stricter form of these for the agent access layer. |
-| NIST AI RMF 1.0 | GOVERN 1.4 (accountability and roles), MAP 3.3 (record-keeping), MANAGE 2.3 (incident response). Part A and Part C supply the records; Part D supplies the measures. |
+| NIST AI RMF 1.0 | GOVERN 2.1 (roles, responsibilities and lines of communication documented), MAP 3.5 (human oversight defined, assessed and documented), MANAGE 2.3 (response to newly identified risks). Part A and Part C supply the records; Part D supplies the measures. |
 | IIA Three Lines Model | Line 1: zone owners and signers (management, owns the risk). Line 2: the continuous machine check and the risk function (reads flags, owns no record). Line 3: the independent reader (internal audit). External audit reads Part D without the operator's help. |
 
 ### 1.4 Who answers for what
