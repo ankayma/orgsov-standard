@@ -41,14 +41,14 @@ Two objects: **paths** (who can reach what, through the organization's access la
 
 ### 1.2 What it is not
 
-It is not a management-system standard. ISO/IEC 42001 defines how an organization runs an AI management system — context, leadership, planning, support, operation, evaluation, improvement — and supplies a control set in its Annex A; NIST AI RMF organizes risk work into Govern, Map, Measure, Manage. OrgSov sits one level down: it is a set of **control requirements with mandatory evidence**, the layer at which ISO/IEC 27001 Annex A controls or SOC 2 trust criteria operate. An organization running ISO 42001 or NIST AI RMF selects OrgSov as the technical control set for its agent systems; OrgSov does not replace the management system.
+It is not a management-system standard. ISO/IEC 42001 defines how an organization runs an AI management system — context, leadership, planning, support, operation, evaluation, improvement — and supplies a control set in its Annex A; NIST AI RMF organizes risk work into Govern, Map, Measure, Manage. OrgSov sits one level down: it is a set of **control requirements with mandatory evidence**, the layer at which ISO/IEC 27001 Annex A controls or SOC 2 trust criteria operate. An organization running ISO 42001, ISO 27001 or NIST AI RMF selects OrgSov as the technical control set for every actor — person, AI agent or vendor — that reaches its systems or produces its knowledge; OrgSov does not replace the management system.
 
 ### 1.3 Where it lands in the familiar frameworks
 
 | Framework | Where OrgSov attaches |
 |---|---|
 | ISO/IEC 42001:2023 | Clause 8 (operation) and Annex A: AI system life cycle (A.6), use of AI systems (A.9), third-party relationships (A.10). Evidence records in Part D feed the Statement of Applicability. |
-| ISO/IEC 27001:2022 Annex A | Access control (A.5.15, A.5.18), privileged access (A.8.2), logging (A.8.15), monitoring (A.8.16). Part A is a stricter form of these for the agent access layer. |
+| ISO/IEC 27001:2022 Annex A | Access control (A.5.15, A.5.18), privileged access (A.8.2), logging (A.8.15), monitoring (A.8.16). Part A is a stricter form of these for every connection through the access layer, whoever the actor. |
 | NIST AI RMF 1.0 | GOVERN 2.1 (roles, responsibilities and lines of communication documented), MAP 3.5 (human oversight defined, assessed and documented), MANAGE 2.3 (response to newly identified risks). Part A and Part C supply the records; Part D supplies the measures. |
 | IIA Three Lines Model | Line 1: zone owners and signers (management, owns the risk). Line 2: the continuous machine check and the risk function (reads flags, owns no record). Line 3: the independent reader (internal audit). External audit reads Part D without the operator's help. |
 
@@ -304,7 +304,7 @@ Storage engine; transport; mesh technology; API or tool names (MCP or otherwise)
 
 One invariant governs all three: every change of state has a named, authorized cause, recorded where it cannot be edited, checked continuously off the write path. In Part A the state is *reachable*; in Part B it is *changed*; in Part C it is *treated as true*.
 
-A grant in Part A may serve as a cause in Part B for effects within its scope. A trusted claim in Part C may serve as the cause of a decision in Part B. A grant in Part A may be recorded as a trusted claim in Part C. Part A says who may reach; Part B says what was done; Part C says what was believed. Together they let a third party reconstruct any agent action from its path, its cause and its premises.
+A grant in Part A may serve as a cause in Part B for effects within its scope. A trusted claim in Part C may serve as the cause of a decision in Part B. A grant in Part A may be recorded as a trusted claim in Part C. Part A says who may reach; Part B says what was done; Part C says what was believed. Together they let a third party reconstruct any action, by a person or an AI agent, from its path, its cause and its premises.
 
 ---
 
