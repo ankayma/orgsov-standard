@@ -1,6 +1,6 @@
 # Conformance
 
-How to test an implementation against [OrgSov v0.2](../STANDARD.md), Part D.
+How to test an implementation against [OrgSov v0.3](../STANDARD.md), Part D.
 
 The suites live with the reference implementations and are licensed Apache-2.0 there. This directory points to them; it holds no code yet.
 
@@ -13,7 +13,7 @@ The suites live with the reference implementations and are licensed Apache-2.0 t
 ## Rules (D1, D2)
 
 - Run every suite against your own agent. Passing with one agent says nothing about another.
-- **Self-declared** claim: run the suite, publish the results. Form: "conforms to OrgSov v0.2, Part A" (or B, C, any combination).
+- **Self-declared** claim: run the suite, publish the results. Form: "conforms to OrgSov v0.3, Part A" (or B, C, any combination).
 - **Verified** claim: a party independent of the implementer and the operator runs the suite and reads the evidence in A4, B5, C3 and D3.
 - List which `[planned]` clauses you also meet. `[open]` clauses are excluded from every claim.
 - The mark **Sovereign Organization** requires Parts A, B and C at the verified level, with a D3 record carrying measures, and is always followed by the standard and version.

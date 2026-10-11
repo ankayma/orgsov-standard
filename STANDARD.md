@@ -1,14 +1,14 @@
-# Organizational Sovereignty Standard (OrgSov) — v0.2 draft
+# Organizational Sovereignty Standard (OrgSov) — v0.3 draft
 
 Checkable requirements for organizations whose people and AI agents reach systems and produce knowledge.
 
-Status: draft for the author's review, 10 October 2026. Supersedes v0.1 draft (27 September 2026). Not yet co-audited (see §11).
+Status: draft for the author's review, 11 October 2026. Supersedes v0.2 draft (10 October 2026). Not yet co-audited (see §11).
 License: text of this standard under CC BY 4.0; conformance suites and reference implementations under Apache-2.0. The names and the mark "Sovereign Organization" are not licensed (D1.5). See [LICENSE](LICENSE).
 Author: Bao Trinh (Ankayma, UAE). Public thesis: https://baotrinh.com — risk branch `/risk/`, speed branch `/speed/`.
 
 Marks used in this document:
 - `[runs]` — the requirement is enforced today by at least one reference implementation.
-- `[planned]` — specified, not yet enforced by a reference implementation. Excluded from conformance claims for v0.2.
+- `[planned]` — specified, not yet enforced by a reference implementation. Excluded from conformance claims for v0.3.
 - `[open]` — a design choice the author has not yet made. Not a requirement until resolved.
 - MUST / MUST NOT / MAY are used in their usual normative sense (RFC 2119).
 
@@ -22,8 +22,8 @@ An organization is sovereign when it decides who may reach what and what may be 
 
 AI agents make this urgent. They open connections, run tools and write into company records at machine speed, in volumes no reviewer can follow. But the gap they expose was already there: an insider about to leave, a vendor with a standing login, a laptop taken over by an attacker. The question a board has to answer is not whether someone will make a mistake, but who answers when they do, and whether the record of what happened survives the people who made it. This standard puts two checkable conditions on every actor, human or machine:
 
-- **Access sovereignty.** Every connection anyone uses has a grant behind it, a named human approved that grant on a device that cannot be faked, the grant ends on its own, and every grant, opening, closing and refusal sits in a ledger nobody can edit. Three words: *isolated, granted, evidenced*.
-- **Knowledge sovereignty.** Every claim the organization treats as true has a dated source or a derivation that rebuilds, a named human signed it, and the record walks back to its basis; when the basis falls, everything built on it is flagged. Three words: *truth, trust, traceable*.
+- **Access sovereignty.** Every connection anyone uses has a grant behind it, a named human approved that grant on a device that cannot be faked, the grant ends on its own, and every grant, opening, closing and refusal sits in a ledger nobody can edit. Three properties: *isolated zone, human-granted, tamper-proof evidence*.
+- **Knowledge sovereignty.** Every claim the organization treats as true has a dated source or a derivation that rebuilds, a named human signed it, and the record walks back to its basis; when the basis falls, everything built on it is flagged. Three properties: *truth, trust, traceable*.
 
 Both conditions share one invariant: every change of state — a path opened, a claim accepted — has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. Anyone may propose. Only a human with something to lose signs; an AI agent never does. A third party reads the record without asking the operator for help.
 
@@ -99,21 +99,21 @@ Every clause in Parts A, B and C derives from one of the seven statements below.
 
 *Cause.* Every change of state has a named, authorized cause, recorded where it cannot be edited, and checked continuously off the write path by a machine that can only raise a flag. In Part A the state is *reachable*; in Part B it is *changed*; in Part C it is *treated as true*.
 
-**Access — isolated · granted · evidenced.**
+**Access — isolated zone · human-granted · tamper-proof evidence.**
 
-*Isolated.* No standing path. A node holds no map. One node compromised is one grant, two nodes, one expiry.
+*Isolated zone.* A zone has no standing path in. Every path into a zone, or between two nodes inside it, is opened by a grant and closes on its own. A node holds no map, so one compromised node reaches no further than its current grants.
 
-*Granted.* No path without a grant. No grant without a human bound to hardware who is not the requester. Every grant names two nodes, a scope and an expiry that ends it on its own.
+*Human-granted.* No path without a grant, and no grant without a human. The human approves on a hardware identity and is not the requester. The grant names two nodes, a scope and an expiry, and ends on its own. An AI agent never grants.
 
-*Evidenced.* Every grant, opening, closing and refusal is appended. Nothing is deleted. A party other than the operator reads it.
+*Tamper-proof evidence.* Every grant, opening, closing and refusal is appended to a ledger. Nothing is edited or deleted, by anyone, the operator included. A party other than the operator reads it.
 
 **Knowledge — truth · trust · traceable.**
 
-*Truth.* A trusted claim is a fact with a dated source, or a derivation that rebuilds from principles and trusted claims that still stand.
+*Truth.* Reasoned by a person or an AI agent. A trusted claim is a fact with a dated source, or a derivation that rebuilds from principles and trusted claims that still stand.
 
-*Trust.* Exactly one human signs each claim. An agent never signs. The signer's name falls with the claim.
+*Trust.* Signed by a human only. Exactly one human signs each claim; an AI agent never signs. The signer's name falls with the claim.
 
-*Traceable.* Every trusted claim walks back to its basis. Nothing is deleted. When a premise falls, every claim that stood on it reads as fallen. Status is computed from history, never stored.
+*Traceable.* A living system. Every trusted claim walks back to its basis. Claims are promoted and demoted by named moves; nothing is deleted. When a premise falls, every claim that stood on it reads as fallen. Status is computed from history, never stored.
 
 Part B carries no invariant of its own: it is *Cause* applied to effects, with the cause channel as the record.
 
@@ -121,13 +121,13 @@ Part B carries no invariant of its own: it is *Cause* applied to effects, with t
 
 ## 3. Part A — Access sovereignty
 
-**Definition.** Access sovereignty is the standing work of keeping every path in the access layer at all three: isolated, granted, evidenced. A path exists only for a grant a human made and a ledger holds. The organization is the root of every grant. Nobody alone — an agent, a compromised node or an insider — can create a path or erase its record.
+**Definition.** Access sovereignty is the standing work of keeping every path in the access layer at all three: isolated zone, human-granted, tamper-proof evidence. A path exists only for a grant a human made and a ledger holds. The organization is the root of every grant. Nobody alone — an agent, a compromised node or an insider — can create a path or erase its record.
 
-**Invariants.** Isolated, Granted, Evidenced (§2b). Each section below names the invariant it enforces.
+**Invariants.** Isolated zone, Human-granted, Tamper-proof evidence (§2b). Each section below names the invariant it enforces.
 
 **Threat model** (informative). Part A is tested against three adversaries: an agent acting against instruction (injection, self-expansion); an attacker who holds an internal node and its keys; an insider with a valid identity and a motive. For each, the suite in D2 checks that no path opens without A2 and that every attempt appears in A4.
 
-### A1. Isolated — nodes and zones `[runs: Ankayma]`
+### A1. Isolated zone — nodes and zones `[runs: Ankayma]`
 - A1.1 Every device or service under this Part MUST terminate the access layer in a node with its own identity.
 - A1.2 Nodes MUST be grouped into zones. A zone MUST carry a purpose and a ceiling stated before any grant in it. `[planned: ceiling as a recorded field]`
 - A1.3 Membership in a zone MUST NOT create a path. Every path, inside or across a zone, is a separate grant.
@@ -137,26 +137,26 @@ Part B carries no invariant of its own: it is *Cause* applied to effects, with t
 - A1.7 No party other than the two nodes MAY sit on the path. The operator of the access layer coordinates grants and MUST NOT carry traffic. This MUST be checkable by a path proof the organization can run.
 - A1.8 Compromise of one node MUST yield no more than the paths of that node's current grants, until their expiry. No key held on a node MAY create a grant.
 
-### A2. Granted — a human behind every grant `[runs: Ankayma, single approver; planned: k-of-n]`
+### A2. Human-granted — a human behind every grant `[runs: Ankayma, single approver; planned: k-of-n]`
 - A2.1 A grant MUST be approved by a human whose approval is bound to a hardware identity.
 - A2.2 An agent MUST NOT be an approver. An attempt MUST be rejected and recorded.
 - A2.3 The approver MUST NOT be the requester. Self-approval MUST be rejected at write time.
 - A2.4 A grant MAY require k of n approvers. The required k is set by the ceiling of the zone, not by the requester.
 - A2.5 `[open]` Whether an agent MAY be a requester. If yes, the grant names both the agent and the human under whose grant the agent runs.
 
-### A3. Granted — bounded life `[runs: Ankayma]`
+### A3. Human-granted — bounded life `[runs: Ankayma]`
 - A3.1 Every grant MUST carry an expiry. The path MUST end at expiry without any further action.
 - A3.2 A grant MUST be revocable by a named human before expiry. Revocation closes the path and is recorded.
 - A3.3 `[open]` Whether a live grant MAY be renewed by its approver, or every extension is a new grant. Either way the ledger links the records.
 - A3.4 The maximum life of a grant is set by the organization per zone. The standard sets no number.
 
-### A4. Evidenced — the access ledger `[runs: Ankayma]`
+### A4. Tamper-proof evidence — the access ledger `[runs: Ankayma]`
 - A4.1 The ledger MUST record every grant issued, every path opened, every path closed (by expiry or revocation), and every request refused — each with time, the two nodes, requester, approver and reason.
 - A4.2 The ledger MUST be append-only. No record MAY be edited or deleted after the fact by anyone, including the operator.
 - A4.3 The ledger MUST be read continuously by a party other than the operator, and MUST be readable by a third party without the operator's help.
 - A4.4 A gap in the ledger is itself a finding to report.
 
-### A5. Evidenced — continuous check `[planned: continuous checker over the access ledger]`
+### A5. Tamper-proof evidence — continuous check `[planned: continuous checker over the access ledger]`
 - A5.1 A machine MUST check the access ledger on write events: a path with no current grant; a grant whose approver is also its requester; a grant with no expiry; a path alive past expiry.
 - A5.2 The machine MUST NOT create, close or edit a grant. It raises flags.
 
@@ -257,9 +257,9 @@ Clauses are carried from v0.1 B1–B11, regrouped under the three invariants and
 ## 6. Part D — Conformance
 
 ### D1. Levels of claim
-- D1.1 **Self-declared**: the implementer runs the suite in D2 and publishes results. Claim form: "conforms to OrgSov v0.2, Part A" (or Part B, Part C, or any combination).
+- D1.1 **Self-declared**: the implementer runs the suite in D2 and publishes results. Claim form: "conforms to OrgSov v0.3, Part A" (or Part B, Part C, or any combination).
 - D1.2 **Verified**: the suite is run by a party independent of the implementer and the operator, and the evidence in A4, B5, C3 and D3 is read by that party.
-- D1.3 An implementation MAY claim conformance to any Part at v0.2, listing which `[planned]` clauses it also meets. `[open]` clauses are excluded from every claim.
+- D1.3 An implementation MAY claim conformance to any Part at v0.3, listing which `[planned]` clauses it also meets. `[open]` clauses are excluded from every claim.
 - D1.4 The mark **Sovereign Organization** MAY be used only by an organization that meets Part A, Part B and Part C at level D1.2, with a D3 record carrying measures. The mark is always followed by the standard and version.
 - D1.5 Names, marks and the conformance suite are held by Ankayma (UAE). Any implementation, by anyone, may claim conformance by passing the suite; no license from Ankayma is required to build.
 
@@ -312,9 +312,9 @@ A grant in Part A may serve as a cause in Part B for effects within its scope. A
 
 | Essay step (public anchor) | Clause |
 |---|---|
-| Risk 1 — AI control is isolating what cannot be undone ([`/risk/#wrong-axis`](https://baotrinh.com/risk/#wrong-axis)) | A1 isolated, B1 reversibility |
+| Risk 1 — AI control is isolating what cannot be undone ([`/risk/#wrong-axis`](https://baotrinh.com/risk/#wrong-axis)) | A1 isolated zone, B1 reversibility |
 | Risk 2 — Undone means the loss can be recovered ([`/risk/#unit-money`](https://baotrinh.com/risk/#unit-money)) | B1 |
-| Risk 3 — The AI acts; the human behind it pays ([`/risk/#framework-runs`](https://baotrinh.com/risk/#framework-runs)) | A2 granted, B2 cause channel |
+| Risk 3 — The AI acts; the human behind it pays ([`/risk/#framework-runs`](https://baotrinh.com/risk/#framework-runs)) | A2 human-granted, B2 cause channel |
 | Risk 4 — When that human cannot pay, it rolls up ([`/risk/#principal-broke`](https://baotrinh.com/risk/#principal-broke)) | B4 roll-up |
 | Risk 5 — Controlled means someone will insure it ([`/risk/#insurance-test`](https://baotrinh.com/risk/#insurance-test)) | D3 evidence record |
 | Risk 6 — The only new thing is enforcement at agent speed ([`/risk/#whats-new`](https://baotrinh.com/risk/#whats-new)) | A3 bounded life, A5, B3 invariant checked continuously |

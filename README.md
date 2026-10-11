@@ -2,9 +2,9 @@
 
 Checkable requirements for organizations whose people and AI agents reach systems and produce knowledge.
 
-An organization is sovereign when it decides who may reach what and what may be treated as true — whether the actor is a person, an AI agent, a vendor or an attacker holding a stolen device — and can prove both to a third party. OrgSov puts two checkable conditions on every actor — **access sovereignty** (*isolated, granted, evidenced*) and **knowledge sovereignty** (*truth, trust, traceable*) — under one invariant: every change of state has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. Anyone may propose; only a human with something to lose signs, and an AI agent never does; a third party reads the record without asking the operator for help. AI agents make this urgent; they are the reason for the standard, not its boundary.
+An organization is sovereign when it decides who may reach what and what may be treated as true — whether the actor is a person, an AI agent, a vendor or an attacker holding a stolen device — and can prove both to a third party. OrgSov puts two checkable conditions on every actor — **access sovereignty** (*isolated zone, human-granted, tamper-proof evidence*) and **knowledge sovereignty** (*truth, trust, traceable*) — under one invariant: every change of state has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. Anyone may propose; only a human with something to lose signs, and an AI agent never does; a third party reads the record without asking the operator for help. AI agents make this urgent; they are the reason for the standard, not its boundary.
 
-**Status:** v0.2 draft, 10 October 2026. Not yet co-audited — read it as an assumption until it is (§11).
+**Status:** v0.3 draft, 11 October 2026. Not yet co-audited — read it as an assumption until it is (§11).
 
 **Current version:** [STANDARD.md](STANDARD.md) · [CHANGELOG.md](CHANGELOG.md) · [conformance/](conformance/)
 
@@ -12,7 +12,7 @@ An organization is sovereign when it decides who may reach what and what may be 
 
 | Part | Governs | Invariants |
 |---|---|---|
-| A — Access sovereignty | paths: who can reach what through the access layer | Isolated · Granted · Evidenced |
+| A — Access sovereignty | paths: who can reach what through the access layer | Isolated zone · Human-granted · Tamper-proof evidence |
 | B — Effects | what an actor does once it has a path | Cause (Cause-Justified Change Monitoring) |
 | C — Knowledge sovereignty | claims: what is treated as true in the knowledge ledger | Truth · Trust · Traceable |
 | D — Conformance | levels of claim, test suites, organizational evidence record | — |
@@ -25,7 +25,7 @@ The standard was derived and reviewed by one person. Open an [issue](https://git
 
 ## Versions
 
-Each version is a signed tag (`v0.2-draft`, …). The tag is the public timestamp of that text.
+Each version is a signed tag (`v0.3-draft`, …). The tag is the public timestamp of that text.
 
 ## License
 
