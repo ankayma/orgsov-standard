@@ -1,8 +1,8 @@
 # Organizational Sovereignty Standard (OrgSov)
 
-Checkable requirements for organizations that let AI agents act and produce knowledge.
+Checkable requirements for organizations whose people and AI agents reach systems and produce knowledge.
 
-An organization is sovereign over its AI agents when it decides what they may reach and what they may treat as true, and can prove both to a third party. OrgSov puts two checkable conditions on every agent system — **access** (*isolated, granted, evidenced*) and **knowledge** (*truth, trust, traceable*) — under one invariant: every change of state has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. The agent proposes; a human with something to lose signs; a third party reads the record without asking the operator for help.
+An organization is sovereign when it decides who may reach what and what may be treated as true — whether the actor is a person, an AI agent, a vendor or an attacker holding a stolen device — and can prove both to a third party. OrgSov puts two checkable conditions on every actor — **access sovereignty** (*isolated, granted, evidenced*) and **knowledge sovereignty** (*truth, trust, traceable*) — under one invariant: every change of state has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. Anyone may propose; only a human with something to lose signs, and an AI agent never does; a third party reads the record without asking the operator for help. AI agents make this urgent; they are the reason for the standard, not its boundary.
 
 **Status:** v0.2 draft, 10 October 2026. Not yet co-audited — read it as an assumption until it is (§11).
 
@@ -12,9 +12,9 @@ An organization is sovereign over its AI agents when it decides what they may re
 
 | Part | Governs | Invariants |
 |---|---|---|
-| A — Access | paths: who can reach what through the access layer | Isolated · Granted · Evidenced |
-| B — Effects | what an agent does once it has a path | Cause (Cause-Justified Change Monitoring) |
-| C — Knowledge | claims: what is treated as true in the knowledge ledger | Truth · Trust · Traceable |
+| A — Access sovereignty | paths: who can reach what through the access layer | Isolated · Granted · Evidenced |
+| B — Effects | what an actor does once it has a path | Cause (Cause-Justified Change Monitoring) |
+| C — Knowledge sovereignty | claims: what is treated as true in the knowledge ledger | Truth · Trust · Traceable |
 | D — Conformance | levels of claim, test suites, organizational evidence record | — |
 
 OrgSov is a control set with mandatory evidence. It sits under a management system such as ISO/IEC 42001 or NIST AI RMF, at the layer of ISO/IEC 27001 Annex A controls (§1).

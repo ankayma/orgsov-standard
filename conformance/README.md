@@ -6,9 +6,9 @@ The suites live with the reference implementations and are licensed Apache-2.0 t
 
 | Part | Suite | Where | State |
 |---|---|---|---|
-| A — Access | agent as approver refused and recorded; self-approval refused and recorded; path closes at expiry with no action; node enumeration from a compromised node is empty; path proof shows no third party; operator cannot edit or delete a ledger record; third party reads the ledger without the operator; revocation by a named human closes the path and is recorded | — | `[planned]` — not yet published as a set |
+| A — Access sovereignty | agent as approver refused and recorded; self-approval refused and recorded; path closes at expiry with no action; node enumeration from a compromised node is empty; path proof shows no third party; operator cannot edit or delete a ledger record; third party reads the ledger without the operator; revocation by a named human closes the path and is recorded | — | `[planned]` — not yet published as a set |
 | B — Effects | fixed CJCM test set: effect with cause, without cause, with expired cause, with scope mismatch, self-approved → exact V(w), identical on re-run | [cause-justified-change-monitoring](https://github.com/baotnq/cause-justified-change-monitoring) | `[runs]` |
-| C — Knowledge | nine-step scenario: assume → admit refused (USE_PROMOTE) → near-duplicate stopped → promote with source → chain readable; principle added → derivation admitted → principle retired lists dependents → dependent reads needs_review → admit on fallen premise refused (PREMISE_NOT_T). Plus: agent as signer refused; restatement of an open assumption without a new exit refused; retire twice; recheck on a derivation refused | t-knowledge-system | `[runs]` |
+| C — Knowledge sovereignty | nine-step scenario: assume → admit refused (USE_PROMOTE) → near-duplicate stopped → promote with source → chain readable; principle added → derivation admitted → principle retired lists dependents → dependent reads needs_review → admit on fallen premise refused (PREMISE_NOT_T). Plus: agent as signer refused; restatement of an open assumption without a new exit refused; retire twice; recheck on a derivation refused | t-knowledge-system | `[runs]` |
 
 ## Rules (D1, D2)
 

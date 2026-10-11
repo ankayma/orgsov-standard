@@ -1,6 +1,6 @@
 # Organizational Sovereignty Standard (OrgSov) — v0.2 draft
 
-Checkable requirements for organizations that let AI agents act and produce knowledge.
+Checkable requirements for organizations whose people and AI agents reach systems and produce knowledge.
 
 Status: draft for the author's review, 10 October 2026. Supersedes v0.1 draft (27 September 2026). Not yet co-audited (see §11).
 License: text of this standard under CC BY 4.0; conformance suites and reference implementations under Apache-2.0. The names and the mark "Sovereign Organization" are not licensed (D1.5). See [LICENSE](LICENSE).
@@ -18,16 +18,16 @@ Abbreviations are introduced once, in §2, and each Part repeats the full term a
 
 ## Overview for the board
 
-An organization is sovereign over its AI agents when it decides what they may reach and what they may treat as true, and can prove both to a third party.
+An organization is sovereign when it decides who may reach what and what may be treated as true — whether the actor is a person, an AI agent, a vendor or an attacker holding a stolen device — and can prove both to a third party.
 
-Agents now open connections, run tools and write into company records at machine speed. The question a board has to answer is not whether an agent will make a mistake, but who answers when it does, and whether the record of what happened survives the people who made it. This standard puts two checkable conditions on every agent system:
+AI agents make this urgent. They open connections, run tools and write into company records at machine speed, in volumes no reviewer can follow. But the gap they expose was already there: an insider about to leave, a vendor with a standing login, a laptop taken over by an attacker. The question a board has to answer is not whether someone will make a mistake, but who answers when they do, and whether the record of what happened survives the people who made it. This standard puts two checkable conditions on every actor, human or machine:
 
-- **Access.** Every connection an agent or a person uses has a grant behind it, a named human approved that grant on a device the agent cannot fake, the grant ends on its own, and every grant, opening, closing and refusal sits in a ledger nobody can edit. Three words: *isolated, granted, evidenced*.
-- **Knowledge.** Every claim an agent treats as true has a dated source or a derivation that rebuilds, a named human signed it, and the record walks back to its basis; when the basis falls, everything built on it is flagged. Three words: *truth, trust, traceable*.
+- **Access sovereignty.** Every connection anyone uses has a grant behind it, a named human approved that grant on a device that cannot be faked, the grant ends on its own, and every grant, opening, closing and refusal sits in a ledger nobody can edit. Three words: *isolated, granted, evidenced*.
+- **Knowledge sovereignty.** Every claim the organization treats as true has a dated source or a derivation that rebuilds, a named human signed it, and the record walks back to its basis; when the basis falls, everything built on it is flagged. Three words: *truth, trust, traceable*.
 
-Both conditions share one invariant: every change of state — a path opened, a claim accepted — has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. The agent proposes. A human with something to lose signs. A third party reads the record without asking the operator for help.
+Both conditions share one invariant: every change of state — a path opened, a claim accepted — has a named, authorized cause, recorded where it cannot be edited, and checked continuously by a machine that can only raise a flag. Anyone may propose. Only a human with something to lose signs; an AI agent never does. A third party reads the record without asking the operator for help.
 
-An organization that meets both conditions can let any agent, from any vendor, work at full speed in the zones where mistakes can be undone, and can show an auditor, a regulator or an insurer exactly what the agent reached, what it believed, and who stood behind each.
+An organization that meets both conditions can let any agent, from any vendor, work at full speed in the zones where mistakes can be undone, can give the same treatment to every person and vendor who reaches its systems, and can show an auditor, a regulator or an insurer exactly what each actor reached, what it relied on, and who stood behind each.
 
 The standard says what must hold. It does not say how to build it, which vendor to use, or which model to run.
 
@@ -37,7 +37,7 @@ The standard says what must hold. It does not say how to build it, which vendor 
 
 ### 1.1 What this standard governs
 
-Two objects: **paths** (who can reach what, through the organization's access layer) and **claims** (what is treated as true in the organization's knowledge ledger). A third object, **effects** (what an agent does once it has a path), is governed by Part B, which restates the Cause-Justified Change Monitoring invariant.
+Two objects: **paths** (who can reach what, through the organization's access layer) and **claims** (what is treated as true in the organization's knowledge ledger). A third object, **effects** (what an actor does once it has a path), is governed by Part B, which restates the Cause-Justified Change Monitoring invariant.
 
 ### 1.2 What it is not
 
@@ -119,7 +119,7 @@ Part B carries no invariant of its own: it is *Cause* applied to effects, with t
 
 ---
 
-## 3. Part A — Access (access sovereignty)
+## 3. Part A — Access sovereignty
 
 **Definition.** Access sovereignty is the standing work of keeping every path in the access layer at all three: isolated, granted, evidenced. A path exists only for a grant a human made and a ledger holds. The organization is the root of every grant. Nobody alone — an agent, a compromised node or an insider — can create a path or erase its record.
 
@@ -200,7 +200,7 @@ Part B restates the Cause-Justified Change Monitoring (CJCM) invariant: every ef
 
 ---
 
-## 5. Part C — Knowledge (knowledge sovereignty)
+## 5. Part C — Knowledge sovereignty
 
 **Definition.** Knowledge sovereignty is the standing work of keeping every trusted claim in the ledger at all three: truth, trust, traceable. A claim counts as knowledge only with a path back and a human name. The organization can withdraw any claim, and the withdrawal reaches everything that stood on it.
 
